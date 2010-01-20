@@ -1,0 +1,94 @@
+%==========================================================================
+\section{Hybrid type theory}
+
+\subsection{Montague grammar and nominal intensional logic}
+
+The following definitions follow Montague's treatment; the only deviations
+from his original work are the clauses we have added for handling nominals
+and the introduction of the $@$ operator...
+
+As usual the set $\mathsf{TYPES}$ is defined recursively 
+\begin{equation*}
+\mathsf{TYPES}::=t\mid e\mid \langle a,b\rangle
+\end{equation*}
+
+The set $\mathsf{ME}_{a}$ of meaningful expressions of type\textbf{\ }$a$ is
+defined recursively as follows:
+
+\begin{enumerate}
+\item Every nominal $i$ is in $\mathsf{ME}_{t}$
+
+\item Every constant of type $a$ is in $\mathsf{ME}_{a}$, for any type $a$
+
+\item Every variable of type $a$ is in $\mathsf{ME}_{a}$, for any type $a$
+
+\item If $\alpha \in \mathsf{ME}_{a}$ and $u_{b}$ is a variable of type $b$,
+then $\lambda u_{b}\alpha \in \mathsf{ME}_{\langle b,a\rangle }$
+
+\item If $\gamma \in \mathsf{ME}_{\langle b,a\rangle }$ and $\beta \in 
+\mathsf{ME}_{b}$ then $\gamma \beta \in \mathsf{ME}_{a}$
+
+\item If $\alpha $ and $\beta $ are both in $\mathsf{ME}_{a}$, then $\alpha
+=\beta \in \mathsf{ME}_{t}$
+
+\item If $\varphi $ is in $\mathsf{ME}_{t}$, then $\lnot \varphi $ is also
+in $\mathsf{ME}_{t}$
+
+\item If $\varphi $ and $\psi $ are in $\mathsf{ME}_{t}\ $, then $\varphi
+\wedge \psi $ is in $\mathsf{ME}_{t}$
+
+\item If $\varphi $ is in $\mathsf{ME}_{t}$ and $u_{a}$ is a variable of any
+type $a$, then $\exists u_{a}\varphi $ $\ $is in $\mathsf{ME}_{t}$\textbf{\ }
+
+\item If $\varphi $ is in $\mathsf{ME}_{t}$, then $\Diamond \varphi $ is in $%
+\mathsf{ME}_{t}$
+
+\item If $\alpha $ is in $\mathsf{ME}_{a}$, then $@_{i}\alpha \in \mathsf{ME}%
+_{a}$
+\end{enumerate}
+
+\subsection{Semantics}
+
+The structures used to interpret this powerful language contain a hierarchy
+of types plus the usual ingredients of Kripke's structures; namely, a
+universe of worlds and the accessibility relation. We also have a function
+giving to each constant in the language its appropiate interpretation in the
+hierarchy.
+
+A (standard)\textbf{\ }structure for\emph{\ }$\mathcal{HTT}$ is a pair $%
+\mathcal{M}=\langle \mathcal{S},\mathsf{F}\rangle $ such that%
+\begin{equation*}
+\mathcal{S}=\left\langle \langle \mathsf{D}_{a}\rangle _{a\in \mathsf{TYPES}%
+},W,R\right\rangle
+\end{equation*}
+is a skeleton, where:
+
+\begin{enumerate}
+\item $\langle \mathsf{D}_{a}\rangle _{a\in \mathsf{TYPES}}$, the hierarchy
+of types, is defined recursively as follows (where $a$ and $b$ are types):%
+\begin{equation*}
+\begin{array}{rcl}
+\mathsf{D}_{e} & = & A\text{ (where }A\not=\varnothing \text{ is the set of
+individuals)} \\ 
+\mathsf{D}_{t} & = & \text{ is a two element set (the truth values)} \\ 
+\mathsf{D}_{\langle a,b\rangle } & = & \mathsf{D}_{b}{}^{\mathsf{D}_{a}}%
+\text{ is the set of all functions from }\mathsf{D}_{a}\text{ into }\mathsf{D%
+}_{b}%
+\end{array}%
+\end{equation*}
+
+\item W is the set of worlds, $W\not=\varnothing $
+
+\item $\mathsf{R}\subseteq \mathsf{W}\times \mathsf{W}$ is the accessibility
+relation
+
+\item $\mathsf{F}$ is a function whose domain is $\mathsf{NOM}\cup \mathsf{%
+CON}$ of $\mathcal{HTT}$, $\mathsf{F}$ assigns to each nominal a function
+from $\mathsf{W}$ to the set of truth values and to each non-logical
+constant a function from $\mathsf{W}$ to an element in the hierarchy of
+types of the appropriate type 
+\begin{equation*}
+\mathsf{F}:\mathsf{NOM}\cup \mathsf{CON}\longrightarrow \bigcup\limits_{a\in 
+\mathsf{TYPES}}\left( \left. \mathsf{D}_{a}\right. ^{W}\right)
+\end{equation*}
+\end{enumerate}

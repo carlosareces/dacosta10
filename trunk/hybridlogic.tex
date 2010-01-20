@@ -1,0 +1,240 @@
+%==========================================================================
+\section{Hybrid logic}
+
+\subsection{Arthur Prior and hybrid logic}
+
+Prior~\cite{Prior1967} objected Reichenbach's ideas about the point of
+reference. This is ironic, as Areces and Blackburn pointed 
+out~\cite{ArecesBlackburn2005} since in that same book~\cite{Prior1967}, Prior introduced
+a tool that allows integrating his own ideas with those of Reichenbach in a
+very simple way.
+
+This tool's key idea is to add a second sort of propositional symbols ($i$, $%
+j$, $k$, etc.), called nominals, to the propositional symbols of orthodox
+tense logic ($p$, $q$, $r$, etc.). Nominals allow to formally ``talk'' about
+time because each nominal symbol is only true at exactly one time in any
+model; the time the nominal \emph{``is naming''}. Nominals will be the central
+element of \emph{modern hybrid logic}. This is a simple change, but it
+immediately produces a more expressive logic, named here \emph{nominal tense
+logic}~\cite{Blackburn1994}. Let's see what this means.
+
+Consider the formula of orthodox tense logic
+$$
+F(r\wedge p)\wedge \ F(r\wedge q)\rightarrow F(p\wedge q)
+$$
+expressing that if in the future there is a time where both $r$ and $p$ are
+true together, and in the future there is a time where $r$ and $q$ are true
+together, then there is a time in the future where $p$ and $q$ are true
+together. It is clearly not always true because the future times that
+witness $p$ and $q$ could be different. Now consider the formula of nominal
+tense logic obtained by replacing the propositional symbol $r$ by the nominal
+symbol $i$ 
+$$
+F(i\wedge p)\wedge F(i\wedge q)\rightarrow F(p\wedge q)
+$$
+This formula is true in every model because the future times witnessing $p$
+and witnessing $q$ are both making the nominal $i$ true, and there is only
+one time doing this for $i$, by definition. Thus, there is a future time
+where $p$ and $q$ are both true, something expressible in nominal tense
+logic.
+
+Therefore, nominals introduced by Prior allow to express Reichenbach's
+points of reference. Moreover, representations in nominal tense improve
+Reichenbach's representations~\cite{ArecesBlackburn2005}. As an example,
+consider the formula $P(i\wedge P\varphi )$ stating that there is some time
+in the past, named with the nominal $i$, and that the event $\varphi $
+happened before that past time. It is the representation of the pluperfect
+modelization of Reichenbach and combines Reichenbach's insight on the role
+played by temporal reference with Prior's insistence on the privileged role
+of tensed talk. Figure 2 shows a modification of the table given earlier,
+obtained by adding nominal for tense logical representations. In some cases
+the nominal tense logical representations improve Reichenbach's. For
+instance, the future-in-the-past now has a single representation: the
+formula $P(i\wedge F\varphi )$ expresses that there is a reference time $i$
+in the past, and that the point of event occurs to the future of $i$, which
+is what the future-in-the-past means. With this representation, it is not
+necessary to use irrelevant different positions of the point of reference
+with respect to the point of speech, as Reichenbach did.
+
+\begin{figure}[h]
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Structure} & Representation & \emph{Example} \\ \hline
+\textbf{E-R-S} & $\left\langle P\right\rangle (i\wedge \left\langle
+P\right\rangle \varphi )$ & \emph{Alba had sang} \\ \hline
+\textbf{E,R-S} & $\left\langle P\right\rangle (i\wedge \varphi )$ & \emph{%
+Alba sang} \\ \hline
+\textbf{R-E-S }or\textbf{\ R-S,E }or \textbf{R-S-E} & $\left\langle
+P\right\rangle (i\wedge \left\langle F\right\rangle \varphi )$ & \emph{%
+Alba would sing} \\ \hline
+\textbf{E-S,R} & $i\wedge \left\langle P\right\rangle \varphi $ & \emph{%
+Alba has sung} \\ \hline
+\textbf{S,R,E} & $i\wedge \varphi $ & \emph{Alba sings} \\ \hline
+\textbf{S,R-E} & $i\wedge \left\langle F\right\rangle \varphi $ & \emph{%
+Alba is going to sing} \\ \hline
+\textbf{S-E-R} or \textbf{S,E-R }or\textbf{\ E-S-R} & $\left\langle
+F\right\rangle (i\wedge \left\langle P\right\rangle \varphi )$ & \emph{%
+Alba will have sung} \\ \hline
+\textbf{S-R,E} & $\left\langle F\right\rangle (i\wedge \varphi )$ & \emph{%
+Alba will sing} \\ \hline
+\textbf{S-R-E} & $\left\langle F\right\rangle (i\wedge \left\langle
+F\right\rangle \varphi )$ & \textquestiondown ? \\ \hline
+\end{tabular}%
+\end{center}
+
+\caption{Figure 2. Reichenbach`s referential analysis of tense using nominals}\label{fig2}
+\end{figure}
+
+In nominal tense logic we can find the following characteristic elements of
+hybrid modern logic:
+
+\begin{itemize}
+\item \textbf{Nominals}. Prior invented a representation for referring to
+instants of time: \emph{sorting the propositional symbols and using terms
+as formulas} 
+$$
+\ATOM \cup \NOM
+$$
+The atomic formulas $i\in \NOM$ received the expected
+interpretation, just a singleton.
+
+\item \textbf{Universal modality}. The diamond form of the universal
+modality is $\mathbf{E}$
+
+\item \textbf{Quantifiers}. Prior added the quantifiers $\forall$ and 
+$\exists$ allowing then to bind nominals
+\end{itemize}
+
+This is neat. However, as we pointed out at the start of the paper, the
+discussion has been conducted within the confines of propositional nominal
+tense logic. If we want to apply these ideas to real grammars for natural
+language, that is not good enough. And this leads us to the main topic of
+the paper: adding nominals to Montague's IL.
+
+\subsection{Hybrid versus modal}
+
+Modal logic is ironic, because \emph{states}
+are crucial but we cannot refer to them with the formal logic. However, in
+an hybrid logic \emph{yes we can\textexclamdown }. In fact in hybrid logic
+we enhance expressivity of modal logic:
+
+\begin{itemize}
+\item To introduce explicit references to the elements of the model domain;
+for instance, states, days, years, etc.
+
+\item To express that two elements of the domain are related; \emph{i. e.}
+a moment precedes another
+
+\item To improve expressive power by modelling time indexicals; as an
+example, yesterday, today, tomorrow, now, etc.
+
+\item To have very elegant proof theory, closed to labelled deduction systems
+
+\item To define properties of frames which are relevant to temporal logic
+(irreflexivity, asymmetry)
+\end{itemize}
+
+Hybrid logic analyses the upsides and downsides of modal formalisms in
+depth, building on modal simplicity whilst adding nominals and the $@$
+operator to improve its expressive power. It was Patrick Blackburn's idea.
+Nominals refer to individual nodes in the Kripke structure and the $@$
+operator allows us to state in the object language that a formula is true at
+a given point, while the accessibility relation becomes explicit.
+
+\subsection{The @ operator}
+
+As already noted, in a hybrid language we have two sorts of atomic formulas;
+namely $\ATOM \cup \NOM$. We add a new set of modal
+operators $\{ @_{i}\mid i\in \NOM\}$ and we form new
+formulas in this extended language: $\NOM \subseteq \FORM$ 
+and $@_{i}\varphi \in \FORM$ for each $i\in \NOM$.
+
+In the hybrid semantic we still have Kripke models and we add interpretation
+of new formulas. The semantics expels the intuition 
+$$
+\mathcal{A},w\Vdash i~\ \text{iff\ }~\text{the instant }w\text{ is named\ }i%
+\text{ iff \ }i^{\mathcal{A}}=\left\{ w\right\}
+$$
+while the interpretation of the new operator $@$ reads%
+$$
+\mathcal{A},w\Vdash @_{i}\varphi ~\ \text{iff\ }~\mathcal{A},v\Vdash \varphi
+$$
+$v$ being the unique element of $W$ where $i$ is true, namely 
+$i^{\mathcal{A}}=\{v\}$.
+
+\subsection{Zen Philosophy}
+
+As an example of the expressive power of hybrid logic let us see the
+following.
+
+In \emph{The book of perfect emptiness} Tang de Ying asked Xia Ge: 
+\emph{``Did things exist at the dawn of time?''}.
+
+Xia Ge answered: \emph{``If things had not existed at the
+dawn of time, how could they possibly exist today? By the same token, men in
+the future could believe that things did not exist today.''}
+
+This argument can be reformulated in this way.
+
+\begin{itemize}
+\item $\alpha :=\;$\emph{If things exist at a given point in time, then at
+any given previous moment in time things must have existed.}
+
+\item $\beta :=\;$\emph{Things exist today.}
+
+\item $\gamma :=\;$\emph{The dawn of time is previous to all else.}
+
+\item $\delta :=\;$\emph{Things existed at the dawn of time.}
+\end{itemize}
+
+In hybrid temporal logic we can express this argument quite simply:
+
+Hypothesis:
+
+\begin{itemize}
+\item $\alpha :=q\rightarrow [P] q$
+
+\item $\beta :=@_{h}\ q$
+
+\item $\gamma :=@_{a}[P] \perp$
+\end{itemize}
+
+Conclusion
+
+\begin{itemize}
+\item $\delta :=@_{a}\ q$
+\end{itemize}
+
+To prove $\delta $ from the hypothesis we can use the trichotomy axiom of
+temporal logic 
+$$
+@_{a}\ h\vee @_{a}\ \left\langle P\right\rangle h\vee @_{h}\ \left\langle
+P\right\rangle a
+$$
+
+\subsection{Expressivity enhanced}
+
+\emph{Reflexivity}, \emph{symmetry} and \emph{transitivity} of identity are
+now pure formulas:%
+$$
+@_{i}i\qquad @_{i}j\rightarrow @_{j}i\qquad @_{i}j\wedge @_{j}k\rightarrow
+@_{i}k
+$$
+And we can also express that two points are accessible: $@_{s}\Diamond t\ $%
+says that states named by $s\ $and\ $t$ are related by accessibility\ $R$
+
+\emph{Reflexivity}, \emph{symmetry} and \emph{transitivity} of accessibility
+are pure formulas as well:%
+$$
+@_{i}\Diamond i\qquad @_{i}\square \Diamond i\qquad \Diamond \Diamond
+i\rightarrow \Diamond i
+$$
+
+\emph{Irreflexivity}, \emph{asymmetry}, \emph{antisymmetry} and\emph{\
+intransitivity} of accessibility are also pure formulas: 
+$$
+@_{i}\lnot \Diamond i\qquad @_{i}\lnot \Diamond \Diamond i\qquad
+@_{i}\square (\Diamond i\rightarrow i)\qquad \Diamond \Diamond i\rightarrow
+\lnot \Diamond i
+$$
