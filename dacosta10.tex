@@ -1,0 +1,88 @@
+\documentclass{article}
+
+\usepackage{xspace}
+\usepackage[draft]{fixme}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\VAL}{\textsf{VAL}\xspace}
+\newcommand{\CAL}{\textsf{CAL}\xspace}
+\newcommand{\THEO}{\textsf{THEO}\xspace}
+\newcommand{\ATOM}{\textsf{ATOM}\xspace}
+\newcommand{\NOM}{\textsf{NOM}\xspace}
+\newcommand{\FORM}{\textsf{FORM}\xspace}
+
+\begin{document}
+
+\title{???Hybrid Type Theory: The Quartet????}
+\author{XXXX \\
+%EndAName
+XXXX}
+\date{XXXX}
+\maketitle
+
+\begin{abstract}
+This paper is about putting together the ideas of four great names in Logic
+History. \ 
+
+The ideas of Reichenbach about the importance of temporal reference and
+Prior about the importance of the internal perspective provided by modal and
+tense logics have already been combined in~\cite{Blackburn1994}, In this
+paper, simple hybrid logic, named propositional nominal tense logic, allowed
+to put Reichenbach and Prior together. A decade later, in~\cite{ArecesBlackburn2005} nominals were added to Montague's Intensional Logic to build
+a richer hybrid logic (nominal intensional logic). The resulting system was
+capable of capture the insights of Reichenbach, Prior and Montague together.
+
+What we shall do now is to add Leon Henkin's ideas of completeness proofs in
+higher order systems to nominal intensional logic, which is presented here
+as a hybrid type theory. Thus, this paper is about a very expressive formal
+language, that is, type theory enhanced with hybrid modal resources. Our
+collaboration with Carlos Areces and Patrick Blackburn grew 
+from~\cite{ArecesBlackburn2005}, producing the definition of a formal calculus for
+hybrid type theory and its completeness proof. As it is such a strong logic,
+we looked towards Henkin's use of non-standard models in higher order logics
+and we were able to adapt Henkin's general models thereby following in his
+footsteps, and being loyal not only to his conception but also to the
+construction Henkin proposed in his 1950 paper~\cite{Henkin1950}. Thus we
+added Leon Henkin to the list of maestros: Reichenbach, Prior and Montague.
+We are sure Newton Da Costa will enjoy the quartet.
+\end{abstract}
+
+\begin{small}
+\tableofcontents
+\end{small}
+
+\input{introduction.tex}
+\input{modallogic.tex}
+\input{hybridlogic.tex}
+\input{typetheory.tex}
+\input{completeness.tex}
+\input{conclusions.tex}
+
+\bibliographystyle{plain} 
+\bibliography{dacosta10}
+
+\end{document}

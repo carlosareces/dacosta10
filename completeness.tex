@@ -1,0 +1,240 @@
+%==========================================================================
+\section{Completeness}\label{completeness}
+
+\subsection{Theoretical and practical relevance of completeness}
+
+For a logic $\Delta$ and a suitable class of structures $\mathfrak{K}$,
+completeness (weak) and soundness states%
+$$
+\vdash _{\CAL(\Delta)}\varphi \ \ \text{iff}\ \ \models _{\mathfrak{K}%
+}\varphi
+$$
+That is, a formula $\varphi $ is a logical theorem of logic $\Delta$ (is
+provable in a deductive calculus $\CAL(\Delta)$ for $\Delta$) if and only
+if $\varphi$ is valid with respect of the class of structures $\mathfrak{K}$. That is, $\THEO_{\CAL(\Delta)} = \VAL_{\mathfrak{K}}$. Strong completeness
+establishes 
+$$
+\Gamma \vdash _{\CAL(\Delta)}\varphi \ \ \text{iff}\ \ \Gamma 
+\models _{\mathfrak{K}}\varphi
+$$
+
+\paragraph{Theoretical relevance:}
+
+We can say that we don't know a logic till we haven't identified its set of
+valid formulas. Intuitively, we can say that the \emph{logicality} of a
+given formal language resides in the set $\VAL_{\mathfrak{K}}$ of valid
+sentences. Each structure $\mathcal{A}\in \mathfrak{K}$ select from the set
+of all sentences those which are true under this particular interpretation.
+This set of formulas is usually called the theory of a structure 
+$Th(\mathcal{A})$, and it is characteristic of each structure. But all such
+theories share a common nucleus which is the set $\VAL_{\mathfrak{K}}$.
+Because they are true in all structures, these sentences do not refer to
+particular properties of a particular structure. Hence, $\VAL_{\mathfrak{K}}$
+clearly does not characterize any particular structure.
+
+Does this set characterize anything?
+
+The answer is yes, it characterizes the logic in question itself. It
+represents what the logic \emph{`has to say'} about any arbitrary
+structure. If we are able to \emph{`generate'} this set easily, we would
+have finally captured the \emph{essence} of a logic.
+
+\paragraph{Practical relevance:}
+
+The semantic notion of consequence perfectly defines when a formula $\varphi 
+$ follows from a given set of formulas $\Gamma $ (it is `enough' to verify
+that $\varphi $ is true in all models where $\Gamma $ is true); but it does
+not provides for an \emph{`algorithm'} that helps us verify this relation
+(how do we access the models where $\Gamma $ is true to see if $\varphi$ is
+also true there). In principle, we need to check every single model. This is
+when the set $\THEO_{\CAL(\Delta)}$ of theorems, and the notion of
+completeness, come to our help. The set $\THEO_{\CAL(\Delta)}$ is specified
+through a calculus that explicitly defines when a formula follows from
+others: we can infer or deduce that $\varphi $ follows in the deductive
+calculus using the set $\Gamma$ as hypothesis. In other words, we can
+establish a chain of inference from the premises in $\Gamma$ to the
+conclusion $\varphi$. Actually, this operational definition of consequence
+seems even more adequate and closer to the intuitive notion of inference,
+given that it reflects the discursive character of the process. The
+completeness theorem just tells us that both definitions are equivalent.
+
+In modal logic the classical techniques to prove completeness are: 
+\emph{canonical models} and \emph{filtration}. Now, what about proving
+completeness for type theory or other higher order systems?
+
+\subsection{Completeness in the theory of types}
+
+As we stated in the introduction, Henkin defined what he called 
+\emph{general models} and proved the completeness theorem for type 
+theory~\cite{Henkin1950}. He first proved the following theorem, linking
+consistency and satisfiability in a general model.
+
+\begin{theorem}
+If $\Lambda$ is any consistent set
+of cwffs there is a general model (in which its domain  $D_{\alpha}$
+is denumerable) with respect to which $\Lambda$ is satisfiable.
+\end{theorem}
+
+The completeness theorem is obtained as a direct corollary.
+
+The proof follows these key steps:
+
+\begin{enumerate}
+\item \emph{``\ldots to construct a maximal consistent set} $\Gamma$ 
+\emph{such that} $\Gamma$ \emph{contains} $\Lambda$ \emph{\ldots''}. Maximal
+consistent sets describe with enormous precision a possible model for
+themselves.
+
+\item \emph{``Two cwffs} $A_{\alpha}$ \emph{and} $B_{\alpha}$ 
+\emph{of type} $\alpha$ \emph{will be called equivalent iff} $\Gamma
+\vdash A_{\alpha }\leftrightarrow B_{\alpha }$\emph{''}. This is a genuine
+congruence relation.
+
+\item \emph{``We now define by induction on} $\alpha$ \emph{a 
+frame\fixme{why ``frame of domains''} of domains} $\{D_\alpha\}$ \emph{and simultaneously a
+one-to-one mapping} $\Phi$ \emph{of equivalence classes onto the domains} $D_{\alpha}$ 
+\emph{such that} $\Phi (\left[ A_{\alpha }\right]$
+\emph{is in} $D_{\alpha }$\emph{''}.
+\end{enumerate}
+
+\subsection{Completeness of the first-order functional calculus}
+
+Leon Henkin also proved the completeness of the first-order 
+calculus~\cite{Henkin1949} by using his new Henkin-proof style (a mix of semantics and
+syntax put together)
+
+\begin{theorem}
+If $\Lambda$  is a set of formulas of 
+$S_{0}$  in which no member has any occurrence of a free individual
+variables, and if  $\Lambda$  is consistent, then  $\Lambda$
+ is simultaneously satisfiable in a domain of individuals having
+the same cardinal number as the set of primitive symbols of $S_{0}$.
+\end{theorem}
+
+The proof follows the following steps:
+
+\begin{enumerate}
+\item As in the previous proof for type theory a maximal consistent set
+$\Gamma_{\omega}$ is build. \emph{``It is easy to see that} 
+$\Gamma_{\omega}$ \emph{possesses the following properties:}
+
+$\Gamma_{\omega}$ \emph{is a maximal consistent set of cwffs of}
+$S_{\omega}$.
+
+\emph{If a formula} $(\exists x)A$ \emph{is in} $\Gamma_{\omega}$
+\emph{then} $\Gamma_{\omega}$ \emph{also contains a formula}
+$\overline{A}$ \emph{\ldots by substituting some constant for each free
+occurrence of the variable} $x$ \emph{''}.
+
+\item An interpretation is constructed on top of this set
+
+\emph{``In fact we take as our domain} $\Im$ \emph{simply the set of
+individuals constants of} $S_{\omega}$, \emph{and we assign to each such
+constant\ldots itself\ldots as denotation.''} or \emph{``If we take the
+domain} $\overline{\Im }$ \emph{of equivalence classes\ldots ''}.
+\end{enumerate}
+
+\subsection{The completeness of hybrid type theory (HTT)}
+
+We present here the completeness of $\mathcal{HTT}$ following Henkin's
+conception.
+
+\begin{itemize}
+\item $\mathcal{HTT}$ should be incomplete (with respect to standard models)
+due to its expressive power, but we know from \emph{Completeness in the
+theory of types} the use \emph{general models}. The main notions will be:
+
+\begin{itemize}
+\item A \emph{pre-structure} is a structure $\mathcal{M}$
+verifying all the conditions for a standard structure, except for the
+fullness condition on the domains of the hierarchy of types; it is only
+required that $\mathsf{D}_{\langle a,b\rangle }\subseteq 
+\mathsf{D}_{b}{}^{\mathsf{D}_{a}}$
+
+\item A \emph{general structure for} $\mathcal{HTT}$ is a
+pre-structure closed under interpretation, that is, for any meaningful
+expression in $\mathsf{ME}_{a}$, its interpretation is a member of 
+$\mathsf{D}_{a}$.
+\end{itemize}
+
+\item Being $\mathcal{HTT}$ modal we can doubt about the method of proof,
+but we learned from \emph{The completeness of the First-Order Functional
+Calculus} the use of \emph{constants}.
+
+\begin{itemize}
+\item In $\mathcal{HTT}$ we use \emph{rigid terms}\textbf{\ ---}the set of 
+$\mathsf{RIGIDS}$ is defined inductively---
+
+\item Moreover, we have this theorem:\ 
+Let $\langle \mathcal{M},g\rangle $ be a model, if $\gamma \in \mathsf{RIGIDS}$ then $[[\gamma]]^{\mathcal{M},w,g}=[[\gamma ]]^{\mathcal{M},v,g}$ for all $w,v\in W$
+\end{itemize}
+\end{itemize}
+
+We are also loyal to Henkin's construction:
+
+\begin{enumerate}
+\item By defining an \emph{extension to a maximal consistent set adding
+more conditions.}
+
+If $\Sigma$ is any consistent set of formulas, there is an extension to set 
+$\Sigma ^{\omega}$ named, $\Diamond$-saturated, $\exists$-saturated,
+maximal consistent set.
+
+\item By defining an \emph{equivalent relation using the extended set.
+
+Given $\Gamma^{\ast}$, a maximal consistent set which is named, $\Diamond$
+saturated and $\exists$ saturated, we will define an equivalence relation
+for each type, using derivability of equality from $\Gamma^{\ast}$. 
+
+$\alpha _{a}\approx \beta _{a}$ iff $\alpha _{a}=\beta _{a}\in 
+\Gamma ^{\ast}$ for all $\alpha _{a}$, $\beta _{a}\in \mathsf{RIGIDS}_{a}$ where $a\in 
+\mathsf{TYPES-}\left\{ t\right\} $
+
+\item By introducing the \emph{definition of the general structure.}
+
+\begin{enumerate}
+\item We define a general structure $\mathcal{M}=\langle \mathcal{S},\mathsf{%
+F}\rangle $ having a skeleton 
+\begin{equation*}
+\mathcal{S}=\left\langle \langle \mathsf{D}_{a}\rangle _{a\in \mathsf{TYPES}%
+},W,R\right\rangle
+\end{equation*}%
+and a denotation function $\mathsf{F}$.
+
+\item The definition of the hierarchy $\langle \mathsf{D}_{a}\rangle _{a\in 
+\mathsf{TYPES}}$ is done by induction on $a\in \mathsf{TYPES}$ and
+simultaneously we define a one-to-one mapping $\Phi $ of equivalent classes
+onto the domains such that $\Phi (\left[ \alpha _{a}\right] )\in \mathsf{D}%
+_{a}$ for all rigid expression $\alpha _{a}$ of type $a$. After defining the
+hierarchy and the mapping we have to prove that $\Phi $ is:
+
+\begin{enumerate}
+\item well defined, one-to-one, onto
+
+\item we set
+\end{enumerate}
+
+\item For type $ba$ 
+\begin{equation*}
+\begin{tabular}{llll}
+$\Phi :$ & $\left\{ \left[ \gamma _{ba}\right] \mid \gamma _{ba}\in \mathsf{%
+RIGIDS}_{ba}\right\} $ & $\Longrightarrow $ & $\mathsf{D}_{ba}$ \\ 
+& \multicolumn{1}{r}{$\left[ \gamma _{ba}\right] $} & $\longmapsto $ & $\Phi
+(\left[ \gamma _{ba}\right] )\in \mathsf{D}_{ba}$%
+\end{tabular}%
+\end{equation*}%
+where%
+\begin{equation*}
+\begin{tabular}{lrll}
+& $\Phi (\left[ \gamma _{ba}\right] ):\mathsf{D}_{b}$ & $\Longrightarrow $ & 
+$\mathsf{D}_{a}$ \\ 
+& $\Phi (\left[ \beta _{b}\right] )$ & $\longmapsto $ & $\Phi (\left[ \gamma
+_{ba}\beta _{b}\right] )\in \mathsf{D}_{a}$%
+\end{tabular}%
+\end{equation*}
+\end{enumerate}
+\end{enumerate}
+
+Now the proof can be done by following the Henkin construction step by step.
+
+

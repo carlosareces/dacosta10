@@ -1,0 +1,121 @@
+
+%==========================================================================
+\section{Classical conception of modal logic}
+
+Modal logics are obtained from classical standard logic systems
+---propositional logic, first order logic, second order logic, etc.--- by
+adding \emph{``non-truth-functional''}
+operators, named modalities. By using these operators we gain the ability to
+qualify truth.
+
+\subsection{Qualified truth}
+
+In \textit{Modal Logic,} truth can be qualified, that is to say, beyond its
+descriptive or denotative content, expressions have also an auto-reflexive
+dimension. Modal logicians created a formalism able to capture dynamic
+instances, in which truth can be relative. The most frequently qualifiers
+are: \emph{necessary, possible, contingent, obligatory, always, from now on,
+after executing a program, an action, believed, known, etc. }In fact, there
+is not a unique modal logic but a whole family of modal logics.
+
+From a contemporary perspective, modal logics are:
+
+\begin{enumerate}
+\item Tools for modeling and proving. Many notions in linguistic,
+philosophy, computing and science are not absolute but rather have a 
+\emph{``modal''} character. Modal logic, thus,
+provides a language and semantics to represent these notions in a rigorous
+way, adding as well a reasoning mechanism to obtain deductions or
+derivations. Modal systems has been used to reason about \emph{necessity}
+and \emph{possibility}, \emph{time}, \emph{beliefs}, \emph{computation}, and
+many other. All these applications share graph-like structures to represent
+their main concepts (networks of possible worlds, flows of time, epistemic
+alternatives, computational states, etc.)
+
+\item Tools for identifying interesting fragments of classical logics (via
+translation techniques)~\cite{Blackburnetal2007}. Modal logics (and
+their equivalent fragment via translation into the standard logic) can be
+seen as fragments of standard logics that inherit its standard semantics
+(classical first order or higher order) but restricts expressive power (by
+using operators instead of quantification semantics). However, modal logics
+are systems with logical properties different from the original standard
+system, such as the decidability property of many modal logics. In
+particular, under this view, modal logics are interesting tools to study the
+balance between expressiveness and computational complexity in formal systems.
+\end{enumerate}
+
+\subsection{The relational semantics impact}
+
+The best known style of modal semantics is the \emph{relational} or 
+\emph{Kripke} semantics. After studying the class of Kripke models and their
+semantics, it is easy to reach the conclusion that pure modal logic axioms
+capture semantical properties of the accessibility relation $R$, \emph{i.e.},
+modal formulas are valid in models with the corresponding property of $R$:
+
+\begin{itemize}
+\item $T:=\square \varphi \rightarrow \varphi $ is valid, for reflexive $R$
+
+\item $4:=\square \varphi \rightarrow \square \square \varphi \ $ is valid,
+for transitive $R$
+
+\item $D:=\square \varphi \rightarrow \Diamond \varphi $ is valid, for
+serial $R$
+
+\item $B:=\varphi \rightarrow \square \Diamond \varphi $ is valid, for
+symmetric\ $R$
+
+\item $5:=\Diamond \varphi \rightarrow \square \Diamond \varphi $ is valid,
+for euclidean\ $R$
+
+\item $G:=\Diamond \square \varphi \rightarrow \square \Diamond \varphi $ is
+valid, for incestuous\ $R$
+\end{itemize}
+
+In fact, the axioms of a modal logic try to characterize the properties of
+their own accessibility relation. The language is very effective, but not
+always successful. Moreover, we have other alternatives languages. To put it
+succinctly:
+
+\begin{itemize}
+\item Modal models are relational structures and they are extremely common
+in \textit{Classical Model Theory}. 
+
+\item On the other hand, temporal relation is \emph{asymmetric} and
+\emph{irreflexive}, but these are not definable in orthodox tense logic.
+\end{itemize}
+
+\subsection{Evaluating modal logic}
+
+Modal logics are a counterpart of classical logics. The question is what do
+we gain when shifting from classical to modal logic? There are five key
+points that make modal logics a very useful tool:
+
+\begin{enumerate}
+\item Better understanding, precision and useful axiomatization of the
+structures formed by \emph{states, transitions} and \emph{procedures}.
+
+\item Very concise formal expression (operator designated \emph{ad hoc})
+
+\item Modal logics are \emph{decidable}, which is an improved situation in
+comparison to the one encountered in FOL or other higher order logics.
+
+\item \emph{Locally} focused: to better understand the \emph{structure of
+transitions} between states we place ourselves inside the structure and
+travel along
+
+\item We gain an \emph{internal }perspective (AUTOMATON:= visiting the
+accessible states)
+\end{enumerate}
+
+On the other hand, what is missing when shifting to modal logics?
+
+\begin{enumerate}
+\item States are crucial, but we cannot refer to them.
+
+\item The accessibility relation is essential, but it is not explicit in the
+language.
+
+\item In tableau calculus metalanguage tools are needed to solve this
+shortcoming.
+\end{enumerate}
+
