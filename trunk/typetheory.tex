@@ -52,21 +52,21 @@ _{a}$
 The structures used to interpret this powerful language contain a hierarchy
 of types plus the usual ingredients of Kripke's structures; namely, a
 universe of worlds and the accessibility relation. We also have a function
-giving to each constant in the language its appropiate interpretation in the
+giving to each constant in the language its appropriate interpretation in the
 hierarchy.
 
-A (standard)\textbf{\ }structure for\emph{\ }$\mathcal{HTT}$ is a pair $%
-\mathcal{M}=\langle \mathcal{S},\mathsf{F}\rangle $ such that%
-\begin{equation*}
+A (standard) structure for $\mathcal{HTT}$ is a pair 
+$\mathcal{M}=\langle \mathcal{S},\mathsf{F}\rangle $ such that%
+$$
 \mathcal{S}=\left\langle \langle \mathsf{D}_{a}\rangle _{a\in \mathsf{TYPES}%
 },W,R\right\rangle
-\end{equation*}
+$$
 is a skeleton, where:
 
 \begin{enumerate}
 \item $\langle \mathsf{D}_{a}\rangle _{a\in \mathsf{TYPES}}$, the hierarchy
 of types, is defined recursively as follows (where $a$ and $b$ are types):%
-\begin{equation*}
+$$
 \begin{array}{rcl}
 \mathsf{D}_{e} & = & A\text{ (where }A\not=\varnothing \text{ is the set of
 individuals)} \\ 
@@ -75,9 +75,9 @@ individuals)} \\
 \text{ is the set of all functions from }\mathsf{D}_{a}\text{ into }\mathsf{D%
 }_{b}%
 \end{array}%
-\end{equation*}
+$$
 
-\item W is the set of worlds, $W\not=\varnothing $
+\item $W$ is the set of worlds, $W\not=\varnothing $
 
 \item $\mathsf{R}\subseteq \mathsf{W}\times \mathsf{W}$ is the accessibility
 relation
